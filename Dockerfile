@@ -1,5 +1,6 @@
 FROM php:5.6-fpm
-MAINTAINER IOXICO <a@dunin.by>
+
+MAINTAINER Alexander Dunin <a@dunin.by>
 
 RUN apt-get update
 
@@ -34,6 +35,10 @@ RUN docker-php-ext-install \
     zip \
     xsl \
     xmlrpc
+    
+
+COPY ./conf/php.ini /usr/local/etc/php/php.ini
+COPY ./conf/php.conf /usr/local/etc/php-fpm.d/php.conf
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php \
