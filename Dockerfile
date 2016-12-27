@@ -36,6 +36,7 @@ RUN docker-php-ext-install \
     xsl \
     xmlrpc
     
+RUN usermod -u 1000 www-data    
 
 COPY ./conf/php.ini /usr/local/etc/php/php.ini
 COPY ./conf/php.conf /usr/local/etc/php-fpm.d/php.conf
