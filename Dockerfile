@@ -12,10 +12,7 @@ RUN apt-get install -y \
     libxslt-dev \
     libicu-dev \
     unzip \
-    geoip-bin \
-    geoip-database \
     libgeoip-dev \
-    php5-geoip \
     nano \
     mysql-client
 
